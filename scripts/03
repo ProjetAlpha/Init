@@ -14,7 +14,7 @@ pushover () {
 		-F "user=${USER_KEY}" \
 		-F "device=${DEVICE}" \
 		-F "message=${MESSAGE}" \
-		"${PUSHOVERURL}" > /dev/null 2>&1cu
+		"${PUSHOVERURL}" > /dev/null 2>&1
 }
 
 
