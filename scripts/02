@@ -1,4 +1,2 @@
-pgrep -u $1
-ps -fp $(pgrep -u $1)
-killall -KILL -u $1
+pkill -KILL -u $1
 userdel -r $1
