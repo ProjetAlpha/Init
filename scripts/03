@@ -1,0 +1,24 @@
+logged=$(whoami)
+currentuser=$(who | cut -d' ' -f1 | sed -n '1p')
+
+pushover () {
+		PUSHOVERURL="https://api.pushover.net/1/messages.json"
+		API_KEY="ab9w4y8iv3v2mchxokzkfk87uc5ufn"
+		USER_KEY="ur74ai9nh161xrwj4kwvhff3mq2hri"
+		DEVICE="xperiaxa1plus"
+
+		MESSAGE="${1}"
+
+		curl \
+		-F "token=${API_KEY}" \
+		-F "user=${USER_KEY}" \
+		-F "device=${DEVICE}" \
+		-F "message=${MESSAGE}" \
+		"${PUSHOVERURL}" > /dev/null 2>&1
+}
+
+
+if [ "$logged" = "root" ]; then
+	echo "You tried to log as root, this will be reported !"
+	pushover "Warning current user loged as root : $currentuser"
+fi

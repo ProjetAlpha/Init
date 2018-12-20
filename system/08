@@ -1,0 +1,4 @@
+# Il faut generer les cles rsa : ssh-keygen
+# Puis il faut creer le fichier authorized_keys dans le dossier ~/.ssh/ avec la cle publique
+# qui est dans le fichier id_rsa.pub 
+# cat ~/.ssh/authorized_keys
